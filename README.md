@@ -3,11 +3,11 @@
 An all-powerful toolset for Suppocoin.
 
 
-Sentinel is an autonomous agent for persisting, processing and automating Dash V13.1 governance objects and tasks, and for expanded functions in the upcoming Suppocoin V13 release (Evolution).
+Sentinel is an autonomous agent for persisting, processing and automating Suppo V14.1 governance objects and tasks, and for expanded functions in the upcoming Suppocoin V14 release (Suppolution).
 
-Sentinel is implemented as a Python application that binds to a local version 12.1 dashd instance on each Suppocoin V12.1 Masternode.
+Sentinel is implemented as a Python application that binds to a local version 13.1 suppod instance on each Suppocoin V13.1 Masternode.
 
-This guide covers installing Sentinel onto an existing 12.1 Masternode in Ubuntu 14.04 / 16.04.
+This guide covers installing Sentinel onto an existing 13.1 Masternode in Ubuntu 14.04 / 16.04.
 
 ## Installation
 
@@ -22,15 +22,15 @@ Update system packages and ensure virtualenv is installed:
     $ sudo apt-get update
     $ sudo apt-get -y install python-virtualenv
 
-Make sure the local Dash daemon running is at least version 12.1 (120100)
+Make sure the local Suppo daemon running is at least version 13.1 (120100)
 
-    $ dash-cli getinfo | grep version
+    $ suppo-cli getinfo | grep version
 
 ### 2. Install Sentinel
 
 Clone the Sentinel repo and install Python dependencies.
 
-    $ git clone https://github.com/dashpay/sentinel.git && cd sentinel
+    $ git clone https://github.com/codeclock/sentinel.git && cd sentinel
     $ virtualenv ./venv
     $ ./venv/bin/pip install -r requirements.txt
 
@@ -50,13 +50,13 @@ Test the config by runnings all tests from the sentinel folder you cloned into
 
     $ ./venv/bin/py.test ./test
 
-With all tests passing and crontab setup, Sentinel will stay in sync with dashd and the installation is complete
+With all tests passing and crontab setup, Sentinel will stay in sync with suppod and the installation is complete
 
 ## Configuration
 
-An alternative (non-default) path to the `dash.conf` file can be specified in `sentinel.conf`:
+An alternative (non-default) path to the `suppo.conf` file can be specified in `sentinel.conf`:
 
-    dash_conf=/path/to/dash.conf
+    suppo_conf=/path/to/suppo.conf
 
 ## Troubleshooting
 
@@ -66,11 +66,11 @@ To view debug output, set the `SENTINEL_DEBUG` environment variable to anything 
 
 ## Contributing
 
-Please follow the [DashCore guidelines for contributing](https://github.com/dashpay/dash/blob/v0.12.1.x/CONTRIBUTING.md).
+Please follow the [SuppoCore guidelines for contributing](https://github.com/codeclock/sc/blob/v0.12.1.x/CONTRIBUTING.md).
 
 Specifically:
 
-* [Contributor Workflow](https://github.com/dashpay/dash/blob/v0.12.1.x/CONTRIBUTING.md#contributor-workflow)
+* [Contributor Workflow](https://github.com/codeclock/sc/blob/v0.12.1.x/CONTRIBUTING.md#contributor-workflow)
 
     To contribute a patch, the workflow is as follows:
 
@@ -84,4 +84,4 @@ Specifically:
 
 ### License
 
-Released under the MIT license, under the same terms as DashCore itself. See [LICENSE](LICENSE) for more info.
+Released under the MIT license, under the same terms as SuppoCore itself. See [LICENSE](LICENSE) for more info.
