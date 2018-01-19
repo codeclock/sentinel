@@ -16,12 +16,12 @@ def test_suppod():
     config_text = SuppoConfig.slurp_config_file(config.suppo_conf)
     network = 'mainnet'
     is_testnet = False
-    genesis_hash = u'00000ffd590b1485b3caadc19b22e6379c733355108f107a430458cdf3407ab6'
+    genesis_hash = u'000001618879078e4db50cd72d7ade5c6035b60fc63de0db013bd41e2dfea05e'
     for line in config_text.split("\n"):
         if line.startswith('testnet=1'):
             network = 'testnet'
             is_testnet = True
-            genesis_hash = u'00000bafbc94add76cb75e2ec92894837288a481e5c005f6563d91623bf8bc2c'
+            genesis_hash = u'00000f90bc98b16e5635ac46ef972eeaee9ff2381f15c4869f8613a5cb7f2b61'
 
     creds = SuppoConfig.get_rpc_creds(config_text, network)
     suppod = SuppoDaemon(**creds)
@@ -29,7 +29,7 @@ def test_suppod():
 
     assert hasattr(suppod, 'rpc_connection')
 
-    # Suppo testnet block 0 hash == 00000bafbc94add76cb75e2ec92894837288a481e5c005f6563d91623bf8bc2c
+    # Suppo testnet block 0 hash == 00000f90bc98b16e5635ac46ef972eeaee9ff2381f15c4869f8613a5cb7f2b61
     # test commands without arguments
     info = suppod.rpc_command('getinfo')
     info_keys = [
